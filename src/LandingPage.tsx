@@ -1,32 +1,21 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState, type ReactNode } from "react";
 import {
-  ArrowRight,
   ArrowDown,
   Camera,
   Shield,
-  Zap,
   Smartphone,
-  Bug,
-  Leaf,
   Map,
   Users,
   BarChart3,
   CheckCircle2,
   ChevronRight,
-  Star,
   Globe,
-  Clock,
-  Sparkles,
-  Target,
   Mail,
   MapPin,
-  Phone,
   ArrowUpRight,
   Brain,
-  MessageCircle,
   BookOpen,
-  TrendingUp,
 } from "lucide-react";
 
 // ========== ANIMATIONS ==========
@@ -99,42 +88,6 @@ function StaggerItem({
     >
       {children}
     </motion.div>
-  );
-}
-
-function AnimatedCounter({
-  target,
-  suffix = "",
-  prefix = "",
-  duration = 2,
-}: {
-  target: number;
-  suffix?: string;
-  prefix?: string;
-  duration?: number;
-}) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-40px" });
-  const [val, setVal] = useState(0);
-  useEffect(() => {
-    if (!isInView) return;
-    let start: number;
-    let frame: number;
-    const animate = (ts: number) => {
-      if (!start) start = ts;
-      const p = Math.min((ts - start) / (duration * 1000), 1);
-      setVal(Math.floor((1 - Math.pow(1 - p, 3)) * target));
-      if (p < 1) frame = requestAnimationFrame(animate);
-    };
-    frame = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(frame);
-  }, [isInView, target, duration]);
-  return (
-    <span ref={ref}>
-      {prefix}
-      {val.toLocaleString("pt-BR")}
-      {suffix}
-    </span>
   );
 }
 
