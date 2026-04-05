@@ -191,6 +191,11 @@ export default function LandingPage() {
 
   return (
     <div className="min-h-screen font-sans">
+      {/* Skip to content */}
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-white focus:px-4 focus:py-2 focus:text-[#1A472A] focus:font-semibold focus:text-sm">
+        Pular para o conteúdo
+      </a>
+
       {/* =============== HEADER =============== */}
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
@@ -200,7 +205,7 @@ export default function LandingPage() {
         }`}
       >
         <div className="container flex h-18 lg:h-20 items-center justify-between">
-          <div className="flex items-center gap-3 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+          <button className="flex items-center gap-3 cursor-pointer bg-transparent border-none p-0" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} aria-label="Voltar ao topo">
             <img
               src="/images/icon.png"
               alt="Rumo Pragas"
@@ -213,7 +218,7 @@ export default function LandingPage() {
             >
               Rumo Pragas
             </span>
-          </div>
+          </button>
 
           <nav className="hidden lg:flex items-center gap-1">
             {[
@@ -236,22 +241,24 @@ export default function LandingPage() {
             ))}
           </nav>
 
-          <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="hidden lg:block">
-            <button
-              className={`flex items-center gap-2 px-6 h-10 text-xs font-sans font-semibold tracking-wider uppercase transition-all duration-400 cursor-pointer ${
-                scrolled
-                  ? "bg-[#1A472A] text-white hover:bg-[#0E2A18]"
-                  : "bg-white/10 backdrop-blur-xl border border-white/20 text-white hover:bg-white/20"
-              }`}
-            >
-              <WhatsAppIcon className="w-3.5 h-3.5" />
-              Contato
-            </button>
+          <a
+            href={WA_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`hidden lg:flex items-center gap-2 px-6 h-10 text-xs font-sans font-semibold tracking-wider uppercase transition-all duration-400 cursor-pointer ${
+              scrolled
+                ? "bg-[#1A472A] text-white hover:bg-[#0E2A18]"
+                : "bg-white/10 backdrop-blur-xl border border-white/20 text-white hover:bg-white/20"
+            }`}
+          >
+            <WhatsAppIcon className="w-3.5 h-3.5" />
+            Contato
           </a>
         </div>
       </header>
 
       {/* =============== HERO =============== */}
+      <main id="main-content">
       <section
         className="relative min-h-[100vh] flex items-center overflow-hidden"
         aria-label="Rumo Pragas - Diagnóstico inteligente"
@@ -293,7 +300,7 @@ export default function LandingPage() {
               </ScrollReveal>
 
               <ScrollReveal delay={0.2}>
-                <p className="text-lg md:text-xl text-white/60 max-w-lg leading-relaxed font-light mb-12">
+                <p className="text-lg md:text-xl text-white/70 max-w-lg leading-relaxed font-light mb-12">
                   O Rumo Pragas identifica pragas e doenças em segundos com
                   inteligência artificial. Receba o diagnóstico completo e o
                   plano de tratamento direto no celular.
@@ -334,7 +341,7 @@ export default function LandingPage() {
                         <p className="text-3xl lg:text-4xl font-display text-white">
                           {stat.value}
                         </p>
-                        <p className="text-[11px] text-white/60 mt-1 tracking-wider uppercase font-sans">
+                        <p className="text-[11px] text-white/70 mt-1 tracking-wider uppercase font-sans">
                           {stat.label}
                         </p>
                       </div>
@@ -793,7 +800,7 @@ export default function LandingPage() {
             </ScrollReveal>
 
             <ScrollReveal delay={0.1}>
-              <p className="text-lg text-white/60 max-w-xl mx-auto leading-relaxed font-light">
+              <p className="text-lg text-white/70 max-w-xl mx-auto leading-relaxed font-light">
                 Baixe o Rumo Pragas gratuitamente e comece a diagnosticar pragas
                 com IA agora mesmo. Disponível para iOS e Android.
               </p>
@@ -823,7 +830,7 @@ export default function LandingPage() {
             </ScrollReveal>
 
             <ScrollReveal delay={0.3}>
-              <div className="flex justify-center gap-8 pt-6 text-white/60">
+              <div className="flex justify-center gap-8 pt-6 text-white/70">
                 {[
                   { icon: Shield, text: "Gratuito para começar" },
                   { icon: Smartphone, text: "iOS & Android" },
@@ -893,6 +900,8 @@ export default function LandingPage() {
         </div>
       </section>
 
+      </main>
+
       {/* =============== FOOTER =============== */}
       <footer className="bg-[#0E2A18] text-white grain-overlay">
         <div className="h-px w-full bg-gradient-to-r from-transparent via-[#B8943E]/40 to-transparent" />
@@ -910,7 +919,7 @@ export default function LandingPage() {
                   Rumo Pragas
                 </span>
               </div>
-              <p className="text-white/60 text-sm leading-relaxed font-light max-w-xs">
+              <p className="text-white/70 text-sm leading-relaxed font-light max-w-xs">
                 Diagnóstico inteligente de pragas com inteligência artificial.
                 Parte do ecossistema AgroRumo.
               </p>
@@ -929,7 +938,7 @@ export default function LandingPage() {
                       onClick={() =>
                         scrollTo(l.toLowerCase().replace(/ /g, "-").replace("ç", "c"))
                       }
-                      className="text-white/60 text-sm hover:text-[#D4B962] transition-colors duration-300 cursor-pointer font-light"
+                      className="text-white/70 text-sm hover:text-[#D4B962] transition-colors duration-300 cursor-pointer font-light"
                     >
                       {l}
                     </button>
@@ -954,7 +963,7 @@ export default function LandingPage() {
                       href={l.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-white/60 text-sm hover:text-[#D4B962] transition-colors duration-300 cursor-pointer font-light flex items-center gap-1 group"
+                      className="text-white/70 text-sm hover:text-[#D4B962] transition-colors duration-300 cursor-pointer font-light flex items-center gap-1 group"
                     >
                       {l.name}
                       <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -972,7 +981,7 @@ export default function LandingPage() {
               <div className="space-y-4">
                 <a
                   href="mailto:contato@agrorumo.com"
-                  className="flex items-center gap-3 text-white/60 text-sm hover:text-white transition-colors duration-300 font-light"
+                  className="flex items-center gap-3 text-white/70 text-sm hover:text-white transition-colors duration-300 font-light"
                 >
                   <Mail className="w-3.5 h-3.5 flex-shrink-0" />
                   contato@agrorumo.com
@@ -981,12 +990,12 @@ export default function LandingPage() {
                   href={WA_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-white/60 text-sm hover:text-white transition-colors duration-300 font-light"
+                  className="flex items-center gap-3 text-white/70 text-sm hover:text-white transition-colors duration-300 font-light"
                 >
                   <WhatsAppIcon className="w-3.5 h-3.5 flex-shrink-0" />
                   (17) 99658-1120
                 </a>
-                <div className="flex items-center gap-3 text-white/60 text-sm font-light">
+                <div className="flex items-center gap-3 text-white/70 text-sm font-light">
                   <MapPin className="w-3.5 h-3.5 flex-shrink-0" />
                   São José do Rio Preto — SP
                 </div>
@@ -996,19 +1005,19 @@ export default function LandingPage() {
 
           {/* Bottom */}
           <div className="border-t border-white/10 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-white/30 text-xs tracking-wide font-light">
+            <p className="text-white/50 text-xs tracking-wide font-light">
               &copy; 2026 AgroRumo Tecnologia LTDA. Todos os direitos reservados.
             </p>
-            <div className="flex gap-8 text-xs text-white/30 tracking-wide font-light">
+            <div className="flex gap-8 text-xs text-white/50 tracking-wide font-light">
               <a
                 href="https://praga.agrorumo.com/privacidade.html"
-                className="hover:text-white/60 transition-colors cursor-pointer"
+                className="hover:text-white/70 transition-colors cursor-pointer"
               >
                 Privacidade
               </a>
               <a
                 href="https://praga.agrorumo.com/termos.html"
-                className="hover:text-white/60 transition-colors cursor-pointer"
+                className="hover:text-white/70 transition-colors cursor-pointer"
               >
                 Termos de Uso
               </a>
