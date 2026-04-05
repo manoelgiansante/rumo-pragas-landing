@@ -363,6 +363,8 @@ export default function LandingPage() {
                         src="/images/screenshot-home.png"
                         alt="Tela principal do Rumo Pragas"
                         className="w-full"
+                        width={280}
+                        height={606}
                         loading="eager"
                       />
                     </div>
