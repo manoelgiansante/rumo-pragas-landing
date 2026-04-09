@@ -1,4 +1,4 @@
-import { motion, useInView, useScroll, useTransform } from "framer-motion";
+import { AnimatePresence, motion, useInView, useScroll, useTransform } from "framer-motion";
 import { useRef, useEffect, useState, type ReactNode } from "react";
 import {
   Camera,
@@ -22,7 +22,9 @@ import {
   Crosshair,
   Activity,
   Database,
+  Menu,
   Microscope,
+  X,
 } from "lucide-react";
 
 // ========== ANIMATION PRIMITIVES ==========
@@ -363,6 +365,7 @@ const TESTIMONIALS = [
 
 export default function LandingPage() {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const heroRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: heroRef,
@@ -440,7 +443,73 @@ export default function LandingPage() {
             <WhatsAppIcon className="w-3 h-3" />
             Contato
           </a>
+
+          {/* Mobile hamburger button */}
+          <button
+            className="lg:hidden flex items-center justify-center w-9 h-9 border border-lab-border text-specimen-text hover:border-specimen-red/40 hover:text-specimen-red transition-all duration-300 cursor-pointer bg-transparent"
+            onClick={() => setMobileMenuOpen((prev) => !prev)}
+            aria-label={mobileMenuOpen ? "Fechar menu" : "Abrir menu"}
+            aria-expanded={mobileMenuOpen}
+          >
+            {mobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
+          </button>
         </div>
+
+        {/* Mobile menu overlay */}
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <>
+              {/* Backdrop */}
+              <motion.div
+                className="fixed inset-0 top-16 bg-lab-black/60 backdrop-blur-sm lg:hidden z-40"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.2 }}
+                onClick={() => setMobileMenuOpen(false)}
+              />
+              {/* Menu panel */}
+              <motion.nav
+                className="absolute top-full left-0 right-0 bg-lab-black/95 backdrop-blur-2xl border-b border-lab-border lg:hidden z-50"
+                initial={{ opacity: 0, y: -8 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ duration: 0.25, ease: [0.25, 0.4, 0.25, 1] }}
+              >
+                <div className="container flex flex-col py-4 gap-1">
+                  {[
+                    { name: "Como Funciona", id: "como-funciona" },
+                    { name: "Recursos", id: "recursos" },
+                    { name: "IA Demo", id: "demo" },
+                    { name: "Precos", id: "precos" },
+                    { name: "Download", id: "download" },
+                  ].map((item) => (
+                    <button
+                      key={item.id}
+                      onClick={() => {
+                        scrollTo(item.id);
+                        setMobileMenuOpen(false);
+                      }}
+                      className="px-4 py-3 font-mono text-[11px] font-bold tracking-[0.2em] uppercase text-specimen-text hover:text-specimen-red hover:bg-specimen-red/5 transition-all duration-300 cursor-pointer text-left bg-transparent border-none"
+                    >
+                      {item.name}
+                    </button>
+                  ))}
+                  <a
+                    href={WA_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="flex items-center gap-2 px-4 py-3 font-mono text-[11px] font-bold tracking-[0.2em] uppercase text-specimen-text hover:text-specimen-red hover:bg-specimen-red/5 transition-all duration-300 cursor-pointer border-t border-lab-border mt-2 pt-4"
+                  >
+                    <WhatsAppIcon className="w-3 h-3" />
+                    Contato via WhatsApp
+                  </a>
+                </div>
+              </motion.nav>
+            </>
+          )}
+        </AnimatePresence>
       </header>
 
       <main id="main-content">
