@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+@theme {
+  --color-bg-dark: #0a0f0d;
+  --color-bg-dark-card: #111916;
+  --color-glow-green: #00e676;
+  --color-glow-orange: #ff9100;
+}
+
+
+
 @theme inline {
   --font-sans: "Manrope", system-ui, sans-serif;
   --font-display: "Space Mono", "Courier New", monospace;
@@ -402,3 +411,37 @@ h1, h2, h3, h4, h5, h6 {
     transition-duration: 0.01ms !important;
   }
 }
+
+@layer utilities {
+  .mesh-gradient-hero {
+    background:
+      radial-gradient(ellipse 80% 60% at 20% 30%, rgba(0, 77, 64, 0.3) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 50% at 80% 20%, rgba(0, 230, 118, 0.08) 0%, transparent 50%),
+      radial-gradient(ellipse 70% 60% at 50% 90%, rgba(255, 111, 0, 0.06) 0%, transparent 55%),
+      #0a0f0d;
+  }
+  .glass-card {
+    background: rgba(17, 25, 22, 0.6);
+    backdrop-filter: blur(20px) saturate(1.5);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1.5rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  }
+  .gradient-text {
+    background: linear-gradient(135deg, #00e676 0%, #00bfa5 50%, #FFB74D 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .grid-pattern {
+    background-image:
+      linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .glow-line {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(0, 230, 118, 0.5), transparent);
+  }
+}
+
