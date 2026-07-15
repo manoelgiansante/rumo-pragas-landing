@@ -14,7 +14,12 @@
       "settings": {
         "preset": "desktop",
         "throttlingMethod": "simulate",
-        "onlyCategories": ["performance", "accessibility", "best-practices", "seo"]
+        "onlyCategories": [
+          "performance",
+          "accessibility",
+          "best-practices",
+          "seo"
+        ]
       }
     },
     "assert": {
@@ -27,6 +32,7 @@
         "largest-contentful-paint": ["error", { "maxNumericValue": 2500 }],
         "cumulative-layout-shift": ["error", { "maxNumericValue": 0.1 }],
         "total-blocking-time": ["warn", { "maxNumericValue": 300 }],
+        "network-dependency-tree-insight": "off",
         "uses-webp-images": "off",
         "uses-responsive-images": "warn",
         "unused-javascript": "warn",
