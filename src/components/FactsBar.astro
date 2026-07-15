@@ -1,0 +1,52 @@
+---
+// Barra de fatos — apenas fatos reais do produto (zero métrica inventada).
+const FACTS = [
+  {
+    label: 'Uso gratuito',
+    desc: 'sem assinatura ou compra interna',
+    icon: 'gift',
+  },
+  {
+    label: 'Confiança visível',
+    desc: 'com hipóteses alternativas quando disponíveis',
+    icon: 'sprout',
+  },
+  {
+    label: 'Fila de reenvio',
+    desc: 'retoma a análise quando a conexão volta',
+    icon: 'zap',
+  },
+  {
+    label: 'Foco no campo brasileiro',
+    desc: 'interface em português e aviso legal local',
+    icon: 'map',
+  },
+];
+
+const ICONS: Record<string, string> = {
+  gift: 'M20 12v10H4V12M2 7h20v5H2zM12 22V7M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z',
+  sprout: 'M7 20h10M10 20c5.5-2.5.8-6.4 3-10M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8zM14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-3.7.3-4.9 1.4-4.9 2z',
+  zap: 'M13 2 3 14h9l-1 8 10-12h-9l1-8z',
+  map: 'M12 22s8-4.5 8-11.8A8 8 0 0 0 4 10.2C4 17.5 12 22 12 22zM12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6z',
+};
+---
+
+<section aria-label="Fatos do Rumo Pragas" class="relative bg-[var(--color-bg-soft)] border-y border-[var(--color-mist)]">
+  <div class="container-px py-8 md:py-10">
+    <ul class="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 list-none m-0 p-0">
+      {FACTS.map((f) => (
+        <li class="flex items-start gap-3">
+          <span class="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white border border-[var(--color-mist)] text-[var(--color-leaf-ink)]" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d={ICONS[f.icon]} />
+            </svg>
+          </span>
+          <span>
+            <span class="block text-sm md:text-base font-bold text-[var(--color-forest)] tnum">{f.label}</span>
+            <span class="block text-xs md:text-sm text-[var(--color-slate)]">{f.desc}</span>
+          </span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>

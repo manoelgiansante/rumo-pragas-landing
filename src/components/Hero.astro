@@ -1,0 +1,97 @@
+---
+import StoreBadges from './StoreBadges.astro';
+---
+
+<section id="hero" class="relative overflow-hidden bg-[var(--color-bg)]">
+  <div class="dot-grid absolute inset-0 opacity-60" aria-hidden="true"></div>
+  <div class="blob-leaf -right-32 -top-40 h-[540px] w-[540px]" aria-hidden="true"></div>
+  <div class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b from-transparent to-[var(--color-bg-soft)]" aria-hidden="true"></div>
+
+  <div class="container-px relative grid items-center gap-14 pb-16 pt-28 md:pb-24 md:pt-36 lg:grid-cols-[1.05fr_0.95fr]">
+    <div class="max-w-2xl">
+      <p class="chip mb-5 !bg-white">
+        <span class="h-1.5 w-1.5 rounded-full bg-[var(--color-leaf)]" aria-hidden="true"></span>
+        Disponível na App Store e no Google Play
+      </p>
+
+      <h1 class="h1-display text-[var(--color-forest)]">
+        Fotografe o sinal.
+        <br />
+        Receba uma hipótese.
+        <br />
+        <span class="gradient-text-leaf">Decida com contexto.</span>
+      </h1>
+
+      <p class="hero-rise hero-rise-1 mt-5 text-lg leading-relaxed text-[var(--color-slate)]">
+        O Rumo Pragas analisa uma foto e apresenta uma hipótese de identificação, o nível de confiança e possíveis alternativas.
+        <strong class="text-[var(--color-ink)]">A IA apoia a triagem; não substitui avaliação técnica.</strong>
+      </p>
+
+      <div id="downloads" class="hero-rise hero-rise-2 mt-8 scroll-mt-28">
+        <StoreBadges />
+        <p class="mt-3 text-sm text-[var(--color-slate)]">Grátis, sem anúncios e sem compras no aplicativo.</p>
+      </div>
+    </div>
+
+    <div class="hero-rise hero-rise-1 relative mx-auto w-full max-w-[360px] lg:justify-self-end">
+      <div class="absolute -inset-10 rounded-[3rem] bg-gradient-to-br from-[rgba(76,175,47,0.2)] via-[rgba(139,212,74,0.12)] to-transparent blur-2xl" aria-hidden="true"></div>
+      <div
+        class="relative rounded-[2.7rem] border border-[#1c3a2b] bg-[var(--color-forest)] p-2 shadow-[0_32px_80px_-24px_rgba(13,43,30,0.5)]"
+        role="img"
+        aria-label="Demonstração ilustrativa de uma hipótese de identificação no Rumo Pragas"
+      >
+        <div class="relative aspect-[9/17.5] overflow-hidden rounded-[2.15rem] bg-gradient-to-b from-[#173c2a] to-[#0d2b1e]">
+          <svg viewBox="0 0 320 420" class="h-full w-full" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs>
+              <linearGradient id="heroLeaf" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#69c94c"></stop>
+                <stop offset="100%" stop-color="#2e7d32"></stop>
+              </linearGradient>
+            </defs>
+            <path d="M160 420C85 330 76 220 128 82c14-36 50-36 64 0 52 138 43 248-32 338Z" fill="url(#heroLeaf)"></path>
+            <path d="M160 405c-8-105-7-210 0-306" stroke="#1e5a24" stroke-width="4" fill="none" stroke-linecap="round"></path>
+            <path d="m158 314-47-53m51 53 47-53m-50-29-36-44m39 44 35-44" stroke="#2e7d32" stroke-width="2" fill="none" opacity="0.7"></path>
+            <ellipse cx="139" cy="222" rx="11" ry="7" fill="#123322" opacity="0.9"></ellipse>
+            <ellipse cx="188" cy="180" rx="8" ry="5" fill="#123322" opacity="0.9"></ellipse>
+            <g transform="translate(121 260) rotate(-12)">
+              <circle cx="0" cy="0" r="9" fill="#775a32"></circle>
+              <circle cx="14" cy="3" r="10" fill="#8a6b3d"></circle>
+              <circle cx="29" cy="6" r="10" fill="#775a32"></circle>
+              <circle cx="44" cy="8" r="9" fill="#8a6b3d"></circle>
+              <circle cx="57" cy="9" r="7" fill="#4f3a1e"></circle>
+            </g>
+          </svg>
+
+          <div class="absolute inset-x-0 top-0 z-10 flex items-center justify-between bg-gradient-to-b from-black/50 to-transparent px-4 pb-3 pt-11 text-white">
+            <span class="text-[11px] font-semibold">Rumo Pragas</span>
+            <span class="rounded-full bg-white/15 px-2 py-1 text-[9px] font-bold uppercase tracking-wide">Demonstração</span>
+          </div>
+
+          <div class="absolute inset-x-6 bottom-[132px] top-[82px] z-10 rounded-2xl border border-white/45" aria-hidden="true">
+            <div class="scan-line absolute inset-x-2 h-10 -translate-y-1/2">
+              <div class="h-px w-full bg-gradient-to-r from-transparent via-[#b6f397] to-transparent shadow-[0_0_16px_2px_rgba(139,212,74,0.65)]"></div>
+              <div class="h-10 w-full bg-gradient-to-b from-[rgba(139,212,74,0.16)] to-transparent"></div>
+            </div>
+            <span class="absolute left-[20%] top-[56%] rounded-lg border-2 border-[var(--color-amber)] px-7 py-3"></span>
+          </div>
+
+          <div class="absolute inset-x-3 bottom-3 z-10 rounded-2xl bg-white/95 p-4 shadow-xl">
+            <div class="flex items-start justify-between gap-3">
+              <div>
+                <p class="text-[10px] font-semibold uppercase tracking-wide text-[var(--color-leaf-ink)]">Hipótese de exemplo</p>
+                <p class="mt-0.5 text-sm font-bold text-[var(--color-forest)]">Lagarta-do-cartucho</p>
+                <p class="text-[10px] italic text-[var(--color-slate)]">Spodoptera frugiperda</p>
+              </div>
+              <span class="rounded-full bg-[#e8f5e2] px-2 py-1 text-[10px] font-bold text-[var(--color-leaf-ink)]">IA</span>
+            </div>
+            <div class="mt-3 h-1.5 overflow-hidden rounded-full bg-[#e8eee9]" aria-hidden="true">
+              <div class="h-full w-3/4 rounded-full bg-[var(--color-leaf-ink)]"></div>
+            </div>
+            <p class="mt-2 text-[10px] font-medium text-[var(--color-slate)]">Confira confiança, alternativas e próximos passos.</p>
+          </div>
+        </div>
+      </div>
+      <p class="mt-4 text-center text-xs text-[var(--color-slate)]">Tela ilustrativa; resultados variam conforme a imagem.</p>
+    </div>
+  </div>
+</section>

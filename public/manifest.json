@@ -1,0 +1,17 @@
+{
+  "name": "Rumo Pragas",
+  "short_name": "Rumo Pragas",
+  "description": "Apoio gratuito à identificação visual por foto, com hipótese, confiança e alternativas.",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "browser",
+  "lang": "pt-BR",
+  "background_color": "#FFFFFF",
+  "theme_color": "#0D2B1E",
+  "icons": [
+    { "src": "/app-icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "/app-icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ],
+  "categories": ["utilities", "education"]
+}

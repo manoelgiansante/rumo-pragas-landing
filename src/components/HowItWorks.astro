@@ -1,0 +1,67 @@
+---
+const STEPS = [
+  {
+    n: '01',
+    title: 'Fotografe',
+    desc: 'Aponte a câmera pra folha, broto ou espiga atacada e tire a foto direto do talhão.',
+    icon: 'camera',
+  },
+  {
+    n: '02',
+    title: 'A IA compara',
+    desc: 'Com internet, a imagem é analisada e o app apresenta uma hipótese, o nível de confiança e possíveis alternativas.',
+    icon: 'scan',
+  },
+  {
+    n: '03',
+    title: 'Valide o próximo passo',
+    desc: 'Guarde o resultado estruturado, compartilhe o PDF e confirme decisões relevantes com profissional habilitado.',
+    icon: 'clipboard',
+  },
+];
+
+const ICONS: Record<string, string> = {
+  camera:
+    'M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3zM12 17a4 4 0 1 0 0-8 4 4 0 0 0 0 8z',
+  scan: 'M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2M7 12h10',
+  clipboard:
+    'M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2M9 2h6a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zM9 14l2 2 4-4',
+};
+---
+
+<section id="como-funciona" class="section relative bg-white overflow-hidden">
+  <div class="dot-grid absolute inset-0 opacity-50" aria-hidden="true"></div>
+  <div class="container-px relative">
+    <div class="max-w-2xl mx-auto text-center reveal-on-scroll">
+      <p class="eyebrow justify-center">Como funciona</p>
+      <h2 class="h2-display mt-3">Da foto a uma triagem <span class="gradient-text-leaf">mais informada</span></h2>
+      <p class="mt-4 text-lg text-[var(--color-slate)]">
+        A tecnologia organiza sinais e incertezas; a decisão continua humana.
+      </p>
+    </div>
+
+    <ol class="mt-14 grid gap-5 md:grid-cols-3 list-none m-0 p-0 relative">
+      <!-- linha pontilhada conectando os passos (desktop) -->
+      <li class="hidden md:block absolute top-[52px] left-[16%] right-[16%] border-t-2 border-dashed border-[var(--color-mist)]" aria-hidden="true"></li>
+
+      {STEPS.map((s) => (
+        <li class="relative reveal-on-scroll">
+          <article class="card card-hover h-full p-7 text-center">
+            <div class="relative inline-flex">
+              <span class="flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-[var(--color-leaf)] to-[var(--color-lime)] text-white shadow-[0_8px_24px_-8px_rgba(76,175,47,0.55)]" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d={ICONS[s.icon]} />
+                </svg>
+              </span>
+              <span class="absolute -top-2 -right-3 rounded-full bg-[var(--color-forest)] px-2 py-0.5 text-[11px] font-bold text-white tnum" aria-hidden="true">
+                {s.n}
+              </span>
+            </div>
+            <h3 class="mt-5 text-xl font-bold text-[var(--color-forest)]">{s.title}</h3>
+            <p class="mt-2.5 text-[15px] leading-relaxed text-[var(--color-slate)]">{s.desc}</p>
+          </article>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>

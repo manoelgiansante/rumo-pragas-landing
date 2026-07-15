@@ -1,0 +1,66 @@
+---
+const ITEMS = [
+  {
+    q: 'O Rumo Pragas é gratuito?',
+    a: 'Sim. O aplicativo não tem assinatura, compra interna, plano pago ou período de teste. Os limites técnicos de uso podem existir para proteger o serviço contra abuso.',
+  },
+  {
+    q: 'A identificação é definitiva?',
+    a: 'Não. A IA apresenta uma hipótese probabilística, um nível de confiança e, quando disponíveis, alternativas. Imagens e sintomas parecidos podem levar a erros. Confirme decisões relevantes com profissional legalmente habilitado.',
+  },
+  {
+    q: 'Funciona no campo sem conexão?',
+    a: 'A análise precisa de internet. Se a conexão falhar durante o envio, o app pode manter a solicitação em uma fila local e tentar novamente quando a rede voltar. O modelo não executa a identificação offline.',
+  },
+  {
+    q: 'Quais culturas são aceitas?',
+    a: 'Você pode enviar imagens de diferentes culturas, mas cobertura e qualidade variam. A biblioteca traz referências de culturas comuns no Brasil; o app avisa quando a imagem não oferece confiança suficiente.',
+  },
+  {
+    q: 'Preciso criar uma conta?',
+    a: 'Sim. A conta permite proteger o histórico estruturado, as preferências e a solicitação de exclusão. O login pode usar e-mail e, conforme a plataforma, Apple ou Google.',
+  },
+  {
+    q: 'O que acontece com a foto?',
+    a: 'A foto é enviada ao backend e encaminhada ao provedor de análise ativo — Agrio por padrão ou o provedor alternativo indicado na Política de Privacidade. O fluxo atual grava o resultado estruturado no histórico, sem escrever uma URL da foto nesse registro.',
+  },
+  {
+    q: 'O app recomenda produto ou dose?',
+    a: 'Não use a IA como receituário. Antes de adquirir ou aplicar um produto, consulte profissional legalmente habilitado e confirme o registro no AGROFIT, conforme a Lei nº 14.785/2023 e a Resolução Confea nº 1.149/2025.',
+  },
+];
+---
+
+<section id="faq" class="section bg-white">
+  <div class="container-px">
+    <div class="mx-auto max-w-3xl">
+      <div class="text-center">
+        <p class="eyebrow justify-center">Dúvidas</p>
+        <h2 class="h2-display mt-3">Perguntas frequentes</h2>
+      </div>
+
+      <div class="mt-10 space-y-3">
+        {ITEMS.map((item, index) => (
+          <details class="faq-item card overflow-hidden" open={index === 0}>
+            <summary class="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 text-left md:px-6">
+              <span class="text-base font-semibold text-[var(--color-forest)] md:text-[17px]">{item.q}</span>
+              <span class="faq-chevron flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[var(--color-mist)] text-[var(--color-leaf-ink)]" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                  <path d="m6 9 6 6 6-6"></path>
+                </svg>
+              </span>
+            </summary>
+            <p class="px-5 pb-5 text-[15px] leading-relaxed text-[var(--color-slate)] md:px-6 md:pb-6">{item.a}</p>
+          </details>
+        ))}
+      </div>
+
+      <p class="mt-8 text-center text-sm text-[var(--color-slate)]">
+        Outra dúvida?
+        <a href="/suporte" class="font-semibold text-[var(--color-leaf-ink)] underline underline-offset-4 hover:text-[var(--color-forest)]">
+          Fale com o suporte
+        </a>
+      </p>
+    </div>
+  </div>
+</section>

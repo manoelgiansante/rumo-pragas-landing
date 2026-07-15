@@ -1,0 +1,53 @@
+---
+interface Props {
+  variant?: 'light' | 'dark';
+  class?: string;
+}
+
+const { variant = 'light', class: className = '' } = Astro.props;
+const focusClass = variant === 'dark'
+  ? 'focus-visible:outline-white'
+  : 'focus-visible:outline-[var(--color-forest)]';
+---
+
+<div class:list={['flex flex-wrap items-center gap-3', className]} role="group" aria-label="Baixar o aplicativo nas lojas">
+  <a
+    href="https://apps.apple.com/br/app/rumo-pragas-ia/id6762232682"
+    target="_blank"
+    rel="noopener noreferrer"
+    class:list={['inline-flex rounded focus-visible:outline-2 focus-visible:outline-offset-4', focusClass]}
+    data-store-link="app-store"
+    aria-label="Baixar o Rumo Pragas na App Store (abre em nova aba)"
+  >
+    <img
+      src="/store-badges/app-store-pt-br.svg"
+      width="120"
+      height="40"
+      alt="Baixar na App Store"
+      class="h-10 w-auto"
+      loading="eager"
+      decoding="async"
+    />
+  </a>
+
+  <a
+    href="https://play.google.com/store/apps/details?id=com.agrorumo.rumopragas&hl=pt_BR"
+    target="_blank"
+    rel="noopener noreferrer"
+    class:list={['inline-flex rounded focus-visible:outline-2 focus-visible:outline-offset-4', focusClass]}
+    data-store-link="google-play"
+    aria-label="Baixar o Rumo Pragas no Google Play (abre em nova aba)"
+  >
+    <img
+      src="/store-badges/google-play-pt-br-155.png"
+      srcset="/store-badges/google-play-pt-br-155.png 155w, /store-badges/google-play-pt-br-310.png 310w"
+      sizes="155px"
+      width="155"
+      height="60"
+      alt="Disponível no Google Play"
+      class="h-[60px] w-auto"
+      loading="eager"
+      decoding="async"
+    />
+  </a>
+</div>

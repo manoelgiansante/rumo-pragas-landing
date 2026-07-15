@@ -1,0 +1,34 @@
+---
+import StoreBadges from './StoreBadges.astro';
+---
+
+<section id="final-cta" class="relative overflow-hidden bg-[var(--color-forest)]">
+  <div class="absolute inset-0 opacity-[0.35] [background-image:radial-gradient(circle_at_1px_1px,rgba(139,212,74,0.16)_1px,transparent_0)] [background-size:26px_26px]" aria-hidden="true"></div>
+  <div class="container-px relative py-20 md:py-28">
+    <div class="mx-auto max-w-2xl text-center">
+      <p class="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.15em] text-[var(--color-lime)]">
+        <span class="h-1.5 w-1.5 rounded-full bg-[var(--color-lime)]" aria-hidden="true"></span>
+        Disponível agora
+      </p>
+      <h2 class="h2-display mt-5 !text-white">Leve mais contexto para a próxima vistoria</h2>
+      <p class="mt-4 text-lg leading-relaxed text-white/80">
+        Fotografe um sinal, confira a hipótese e o nível de confiança e compartilhe o resultado com quem acompanha a lavoura.
+      </p>
+
+      <div class="mx-auto mt-7 grid max-w-xl gap-3 text-left sm:grid-cols-2">
+        <div class="rounded-2xl border border-white/25 bg-white/10 px-5 py-4">
+          <p class="text-xs font-semibold uppercase tracking-[0.15em] text-[var(--color-lime)]">Limites claros</p>
+          <p class="mt-1 text-sm leading-relaxed text-white/85">Hipótese, confiança e alternativas — sem promessa de certeza.</p>
+        </div>
+        <div class="rounded-2xl border border-white/25 bg-white/10 px-5 py-4">
+          <p class="text-xs font-semibold uppercase tracking-[0.15em] text-[var(--color-lime)]">Conexão intermitente</p>
+          <p class="mt-1 text-sm leading-relaxed text-white/85">O envio pode ficar na fila e retomar quando a internet voltar.</p>
+        </div>
+      </div>
+
+      <div class="mt-9 flex justify-center">
+        <StoreBadges variant="dark" />
+      </div>
+    </div>
+  </div>
+</section>

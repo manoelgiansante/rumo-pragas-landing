@@ -1,0 +1,181 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Política de Privacidade — Rumo Pragas"
+  description="Como o Rumo Pragas trata dados pessoais, imagens, localização opcional e dados de uso, conforme a LGPD."
+  canonical="https://pragas.agrorumo.com/privacidade"
+>
+  <Header />
+  <main id="main-content" tabindex="-1" class="mx-auto max-w-3xl px-6 pb-16 pt-28 prose md:pt-32">
+    <h1>Política de Privacidade</h1>
+    <p><strong>Última atualização:</strong> 14 de julho de 2026</p>
+
+    <p>
+      Esta política explica como a <strong>MM CAMPO FORTE LTDA.</strong>, CNPJ
+      <strong>57.169.838/0001-20</strong>, responsável pelo Rumo Pragas sob a marca AgroRumo,
+      trata dados pessoais no aplicativo e no site <code>pragas.agrorumo.com</code>. Aplicamos a
+      Lei Geral de Proteção de Dados — LGPD (Lei nº 13.709/2018) e os princípios de finalidade,
+      necessidade, transparência, segurança e livre acesso.
+    </p>
+
+    <h2>1. Controlador e canal de privacidade</h2>
+    <ul>
+      <li><strong>Controlador:</strong> MM CAMPO FORTE LTDA.</li>
+      <li><strong>CNPJ:</strong> 57.169.838/0001-20</li>
+      <li><strong>Canal do encarregado e dos titulares:</strong> <a href="mailto:contato@agrorumo.com">contato@agrorumo.com</a></li>
+    </ul>
+
+    <h2>2. Dados tratados e finalidades</h2>
+    <ul>
+      <li><strong>Conta:</strong> nome, e-mail, identificadores de autenticação e dados de sessão para criar a conta, autenticar, recuperar acesso e prestar suporte.</li>
+      <li><strong>Imagem enviada para análise:</strong> a foto selecionada é processada para gerar a hipótese solicitada. O histórico atual grava o resultado estruturado, como hipótese, confiança e alternativas, sem gravar uma URL da foto nesse registro.</li>
+      <li><strong>Histórico e conteúdo:</strong> resultados salvos, interações com o assistente e preferências necessárias para oferecer os recursos solicitados.</li>
+      <li><strong>Localização opcional:</strong> coordenadas podem ser usadas, somente após a permissão do sistema, para obter contexto meteorológico. A análise por foto também funciona sem essa permissão. A versão candidata e o backend correspondente reduzem novos registros para duas casas decimais, aproximadamente um quilômetro na latitude; essa minimização só vale depois da implantação do candidato.</li>
+      <li><strong>Notificações opcionais:</strong> token técnico do dispositivo para entregar notificações quando autorizadas.</li>
+      <li><strong>Segurança e diagnóstico:</strong> informações técnicas sobre falhas, versão do aplicativo, sistema e eventos necessários para proteger e manter o serviço.</li>
+      <li><strong>Site:</strong> a preferência de medição fica no armazenamento local do navegador. A hospedagem processa metadados técnicos essenciais da requisição, como endereço IP, data e hora, página solicitada e configuração do dispositivo ou navegador, para entregar, proteger e diagnosticar o site. Meta Pixel e Google Analytics, quando configurado, só são carregados depois de uma escolha positiva.</li>
+    </ul>
+    <p>
+      Registros históricos criados antes dessa minimização podem conter coordenadas com maior
+      precisão. Eles permanecem protegidos pelos controles do aplicativo e do banco. Qualquer
+      correção ou redução de precisão exige alteração controlada de dados reais para preservar a
+      integridade; enquanto isso não ocorrer, esses registros ficam sujeitos às finalidades, bases
+      legais e regras de conservação informadas nesta política.
+    </p>
+    <h2>3. Bases legais</h2>
+    <p>Conforme a finalidade, o tratamento pode se apoiar em:</p>
+    <ul>
+      <li><strong>Execução do serviço solicitado:</strong> conta, autenticação, análise por foto, histórico e suporte.</li>
+      <li><strong>Consentimento:</strong> localização, notificações e medição opcional do site; a autorização pode ser recusada ou revogada.</li>
+      <li><strong>Legítimo interesse:</strong> segurança, prevenção de abuso e melhoria técnica, com avaliação de necessidade e respeito aos direitos do titular.</li>
+      <li><strong>Obrigação legal ou exercício regular de direitos:</strong> quando a conservação ou o fornecimento de informação for exigido pela legislação, por autoridade competente ou for necessário para demonstrar e respeitar uma solicitação de desvinculação.</li>
+    </ul>
+
+    <h2>4. Provedores e compartilhamentos</h2>
+    <p>Usamos apenas os dados necessários em cada integração:</p>
+    <ul>
+      <li><strong>Supabase:</strong> autenticação, banco de dados e funções de backend.</li>
+      <li><strong>Google e Apple:</strong> autenticação social quando esse método é escolhido e está disponível na plataforma; recebem os identificadores e dados de perfil necessários para autenticar a conta.</li>
+      <li><strong>Agrio (Saillog):</strong> é o provedor padrão atual da análise por imagem. Recebe a foto e o contexto necessário somente depois do consentimento de IA.</li>
+      <li><strong>Google Gemini:</strong> é o provedor padrão atual do assistente. Recebe o texto e o contexto necessário somente depois do consentimento de IA.</li>
+      <li><strong>Anthropic Claude:</strong> pode ser selecionado pela configuração segura do servidor como provedor alternativo do diagnóstico ou do assistente. Quando selecionado, recebe o conteúdo necessário à rota acionada, em vez do provedor padrão correspondente.</li>
+      <li><strong>Open-Meteo:</strong> recebe coordenadas aproximadas, quando autorizadas, para retornar contexto meteorológico; não recebe nome ou e-mail nessa consulta.</li>
+      <li><strong>Sentry:</strong> monitoramento técnico de erros e estabilidade.</li>
+      <li><strong>Expo:</strong> entrega de notificações push quando autorizadas.</li>
+      <li><strong>Vercel:</strong> hospedagem, entrega e proteção deste site; pode tratar IP, localização aproximada derivada do IP, configuração do sistema e registros técnicos da requisição, conforme a <a href="https://vercel.com/legal/privacy-notice" target="_blank" rel="noopener noreferrer">Política de Privacidade da Vercel</a>.</li>
+      <li><strong>Meta e Google:</strong> medição do site somente após consentimento; não são carregados quando a medição é recusada.</li>
+    </ul>
+    <p>
+      Alguns provedores podem processar dados fora do Brasil. Limitamos o envio ao necessário, e
+      qualquer transferência internacional deve observar os mecanismos exigidos pela LGPD e pela
+      regulamentação da ANPD. A validação contratual desses mecanismos integra o gate operacional
+      anterior ao lançamento. Também podemos compartilhar informações quando houver obrigação legal,
+      ordem válida ou necessidade de exercício regular de direitos.
+    </p>
+    <p>
+      O provedor ativo é definido no servidor. O tratamento realizado por ele também segue o
+      contrato e a política de privacidade aplicáveis. Não afirmamos que terceiros tenham retenção
+      zero, processamento apenas no Brasil ou ausência de uso para treinamento sem uma garantia
+      contratual verificável.
+    </p>
+    <p>Não vendemos nem alugamos dados pessoais.</p>
+
+    <h2>5. Decisões assistidas por inteligência artificial</h2>
+    <p>
+      A resposta da IA é probabilística e pode conter erros. Ela organiza uma hipótese, um nível de
+      confiança e possíveis alternativas, mas não toma decisões com efeito jurídico sobre o titular
+      e não substitui avaliação profissional. Não use a resposta como receituário agronômico ou como
+      indicação autônoma de produto, dose ou aplicação.
+    </p>
+
+    <h2>6. Segurança</h2>
+    <p>
+      Adotamos HTTPS, controles de autenticação e autorização, isolamento de registros por usuário,
+      armazenamento protegido de sessão no dispositivo e monitoramento técnico. Nenhum sistema é
+      isento de risco; incidentes relevantes serão tratados e comunicados conforme a legislação e a
+      regulamentação aplicáveis.
+    </p>
+
+    <h2>7. Conservação e exclusão</h2>
+    <p>
+      Conservamos dados enquanto forem necessários para prestar o serviço, cumprir obrigação legal,
+      proteger direitos ou atender outra finalidade legítima informada. Não declaramos um prazo único
+      para todas as categorias porque cada uma pode ter fundamento e ciclo técnico diferentes.
+    </p>
+    <p>
+      Ao concluir a exclusão dentro do aplicativo, os dados específicos do Rumo Pragas são eliminados
+      e os tokens push são revogados. A identidade global AgroRumo é compartilhada com outros produtos
+      e <strong>não é apagada por essa ação específica do Rumo Pragas</strong>; ela pode ser mantida de
+      acordo com a base legal aplicável. Registros históricos compartilhados sem um discriminador seguro
+      de aplicativo, como eventos de análise e auditoria, também são mantidos para evitar a exclusão de
+      dados pertencentes a outros produtos.
+    </p>
+    <p>
+      Conservamos ainda um <strong>marcador técnico mínimo de desvinculação</strong>: o identificador
+      global em formato UUID, estado operacional, número de tentativas, códigos técnicos limitados e
+      datas do processamento. Ele não contém nome, e-mail, foto, conteúdo, mensagem ou token. Sua
+      finalidade é repetir uma limpeza interrompida, demonstrar que os dados do aplicativo foram
+      eliminados e impedir que eles sejam recriados silenciosamente enquanto a identidade compartilhada
+      continua ativa. Conforme o caso, esse tratamento se apoia no cumprimento da solicitação do titular,
+      em obrigações de proteção de dados e no exercício regular de direitos; o marcador não é usado para
+      publicidade ou perfilização.
+    </p>
+    <p>
+      O marcador é mantido até uma reativação explícita do Rumo Pragas ou até a exclusão da identidade
+      global AgroRumo. A reativação não restaura dados antigos. O aplicativo informa se a operação foi
+      concluída, continua em processamento ou precisa ser tentada novamente. Consulte
+      <a href="/excluir-conta">Excluir dados do Rumo Pragas</a>.
+    </p>
+    <p>
+      Cópias residuais tecnicamente necessárias, registros sujeitos a obrigação legal e dados
+      anonimizados podem ser conservados nas hipóteses do art. 16 da LGPD, sem uso incompatível com a
+      finalidade da retenção.
+    </p>
+
+    <h2>8. Direitos do titular</h2>
+    <p>Nos termos da LGPD, você pode solicitar, sem custo:</p>
+    <ul>
+      <li>confirmação e acesso aos dados;</li>
+      <li>correção de dados incompletos, inexatos ou desatualizados;</li>
+      <li>anonimização, bloqueio ou eliminação de dados desnecessários, excessivos ou tratados em desconformidade;</li>
+      <li>portabilidade, conforme regulamentação aplicável;</li>
+      <li>informação sobre compartilhamentos e sobre as consequências de não consentir;</li>
+      <li>revogação do consentimento, oposição e eliminação quando cabíveis.</li>
+    </ul>
+    <p>
+      Escreva para <a href="mailto:contato@agrorumo.com">contato@agrorumo.com</a>. Podemos solicitar
+      dados mínimos para confirmar sua identidade. Se a resposta não for satisfatória, você pode
+      peticionar à <a href="https://www.gov.br/anpd/pt-br/canais_atendimento/cidadao-titular-de-dados/denuncia-peticao-de-titular-referente-lgpd" target="_blank" rel="noopener noreferrer">ANPD</a>
+      ou procurar os órgãos de defesa do consumidor.
+    </p>
+
+    <h2>9. Crianças e adolescentes</h2>
+    <p>
+      O serviço não é direcionado a crianças. Se identificarmos tratamento incompatível com o melhor
+      interesse de criança ou adolescente, adotaremos as medidas cabíveis e poderemos pedir a atuação
+      do responsável legal.
+    </p>
+
+    <h2 id="cookies">10. Medição e preferência no site</h2>
+    <p>
+      O site funciona sem medição opcional. Ao aceitar, Meta Pixel e, quando configurado, Google
+      Analytics podem registrar visita e clique de saída para as lojas. Ao recusar, esses scripts não
+      são carregados. Use o botão <strong>Preferências de medição</strong> no rodapé para rever a escolha.
+      A preferência é guardada localmente no navegador.
+    </p>
+
+    <h2>11. Alterações</h2>
+    <p>
+      Podemos atualizar esta política para refletir mudanças legais, técnicas ou operacionais. A data
+      acima indica a versão vigente; mudanças materiais serão comunicadas por meio adequado.
+    </p>
+
+    <hr />
+    <p><small>MM CAMPO FORTE LTDA. · CNPJ 57.169.838/0001-20 · Brasil · <a href="mailto:contato@agrorumo.com">contato@agrorumo.com</a></small></p>
+  </main>
+  <Footer />
+</BaseLayout>

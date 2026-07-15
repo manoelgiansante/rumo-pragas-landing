@@ -1,0 +1,14 @@
+/* TEAM */
+Team: AgroRumo
+Company: MM CAMPO FORTE LTDA
+Brand: AgroRumo
+
+/* SITE */
+Last update: 2026-07-14
+Language: pt-BR
+Standards: HTML5, CSS3, ES2024
+Accessibility target: WCAG 2.2 AA
+Stack: Astro 6, Tailwind CSS 4, TypeScript
+
+/* THANKS */
+Às pessoas que produzem alimentos no campo brasileiro.

@@ -1,0 +1,54 @@
+---
+const CARDS = [
+  {
+    title: 'Sintomas podem se parecer',
+    desc: 'Pragas, doenças, deficiência e dano mecânico podem gerar sinais semelhantes. Uma única imagem raramente conta toda a história.',
+    icon: 'trend-down',
+  },
+  {
+    title: 'A qualidade da foto importa',
+    desc: 'Foco, luz, distância, parte da planta e estágio do sintoma influenciam a hipótese e o nível de confiança.',
+    icon: 'eye-off',
+  },
+  {
+    title: 'Contexto completa a triagem',
+    desc: 'Cultura, fase, distribuição na área, clima e inspeção presencial ajudam a separar hipóteses antes de qualquer intervenção.',
+    icon: 'clock',
+  },
+];
+
+const ICONS: Record<string, string> = {
+  'trend-down': 'M22 17 13.5 8.5l-5 5L2 7M16 17h6v-6',
+  'eye-off': 'M9.88 9.88a3 3 0 1 0 4.24 4.24M10.73 5.08A10.4 10.4 0 0 1 12 5c7 0 10 7 10 7a13.2 13.2 0 0 1-1.67 2.68M6.61 6.61A13.5 13.5 0 0 0 2 12s3 7 10 7a9.7 9.7 0 0 0 5.39-1.61M2 2l20 20',
+  clock: 'M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20zM12 6v6l4 2',
+};
+---
+
+<section id="problema" class="section relative bg-[var(--color-bg-soft)] overflow-hidden">
+  <div class="blob-leaf w-[420px] h-[420px] -bottom-52 -right-40 opacity-60" aria-hidden="true"></div>
+  <div class="container-px relative">
+    <div class="max-w-2xl reveal-on-scroll">
+      <p class="eyebrow">O problema</p>
+      <h2 class="h2-display mt-3">
+        Uma foto ajuda. <span class="text-[var(--color-leaf-ink)]">A decisão exige contexto.</span>
+      </h2>
+      <p class="mt-4 text-lg text-[var(--color-slate)] leading-relaxed">
+        O Rumo Pragas organiza uma primeira leitura visual sem esconder a incerteza da inteligência artificial.
+      </p>
+    </div>
+
+    <div class="mt-12 grid gap-5 md:grid-cols-3">
+      {CARDS.map((c) => (
+        <article class="card card-hover reveal-on-scroll p-6 md:p-7">
+          <span class="flex h-11 w-11 items-center justify-center rounded-xl bg-[var(--color-bg-soft)] border border-[var(--color-mist)] text-[var(--color-leaf-ink)]" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d={ICONS[c.icon]} />
+            </svg>
+          </span>
+          <h3 class="mt-4 text-lg font-bold text-[var(--color-forest)]">{c.title}</h3>
+          <p class="mt-2 text-[15px] leading-relaxed text-[var(--color-slate)]">{c.desc}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,98 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Excluir dados do Rumo Pragas — Privacidade"
+  description="Como solicitar a exclusão dos dados específicos do Rumo Pragas e entender o resultado do processamento."
+  canonical="https://pragas.agrorumo.com/excluir-conta"
+>
+  <Header />
+  <main id="main-content" tabindex="-1" class="mx-auto max-w-3xl px-6 pb-16 pt-28 prose md:pt-32">
+    <h1>Excluir dados do Rumo Pragas</h1>
+    <p><strong>Última atualização:</strong> 14 de julho de 2026</p>
+    <p>
+      A ação abaixo elimina os dados específicos deste aplicativo. Sua identidade de acesso AgroRumo é
+      compartilhada com outros produtos e não é apagada por essa operação específica.
+    </p>
+
+    <h2>Pelo aplicativo</h2>
+    <ol>
+      <li>Abra o Rumo Pragas no iPhone ou Android.</li>
+      <li>Acesse a aba <strong>Ajustes</strong>.</li>
+      <li>Toque em <strong>Excluir Conta</strong>.</li>
+      <li>Leia o aviso e confirme a solicitação.</li>
+    </ol>
+
+    <h2>O que cada resultado significa</h2>
+    <ul>
+      <li><strong>Concluído:</strong> os dados específicos do Rumo Pragas foram eliminados e os tokens de notificação push foram revogados. A identidade global AgroRumo, registros históricos compartilhados sem discriminador seguro de aplicativo e o marcador técnico mínimo de desvinculação foram mantidos.</li>
+      <li><strong>Em processamento:</strong> a solicitação foi aceita, mas ainda não terminou. Aguarde e verifique novamente.</li>
+      <li><strong>Não concluído:</strong> a operação falhou ou ficou incompleta. Tente novamente; se persistir, contate o suporte.</li>
+    </ul>
+    <p>
+      A eliminação concluída é irreversível para os dados do Rumo Pragas. Registros que devam ser mantidos
+      por obrigação legal, exercício regular de direitos ou outra hipótese do art. 16 da LGPD podem ser
+      conservados apenas pelo período e finalidade cabíveis.
+    </p>
+
+    <h2>Dados específicos abrangidos</h2>
+    <ul>
+      <li>histórico de identificações e resultados salvos no Rumo Pragas;</li>
+      <li>interações e preferências específicas do aplicativo;</li>
+      <li>dados auxiliares vinculados ao uso do Rumo Pragas;</li>
+      <li>tokens de notificação push associados ao aplicativo.</li>
+    </ul>
+    <p>
+      O histórico atual grava o resultado estruturado sem escrever uma URL da foto. Imagens que você
+      tenha mantido na galeria do aparelho devem ser apagadas por você no próprio sistema.
+    </p>
+
+    <h2>Identidade global AgroRumo</h2>
+    <p>
+      Nome, e-mail e identidade de autenticação podem atender outros produtos AgroRumo e, por isso, são
+      mantidos após a exclusão específica do Rumo Pragas conforme a base legal aplicável. Para exercer
+      direitos sobre essa identidade global, envie uma solicitação ao canal de privacidade; o pedido será
+      avaliado em relação a todos os produtos e às hipóteses legais de conservação.
+    </p>
+    <p>
+      Eventos históricos de análise e auditoria que não identificam com segurança qual aplicativo os
+      originou também são mantidos, pois apagá-los poderia alterar registros de outros produtos AgroRumo.
+    </p>
+
+    <h2>Marcador técnico de desvinculação</h2>
+    <p>
+      Para concluir novas tentativas e impedir que os dados do Rumo Pragas sejam recriados automaticamente,
+      mantemos somente o UUID da identidade global, estado operacional, tentativas, códigos técnicos
+      limitados e datas do processamento. O marcador não contém nome, e-mail, foto, mensagem, conteúdo ou
+      token e não é usado para publicidade ou perfilização.
+    </p>
+    <p>
+      Sua finalidade é executar a solicitação, comprovar a limpeza específica do aplicativo e respeitar a
+      desvinculação. Conforme o caso, o tratamento se apoia no cumprimento da solicitação do titular, em
+      obrigações de proteção de dados e no exercício regular de direitos. Ele permanece até você reativar
+      explicitamente o Rumo Pragas ou até a identidade global AgroRumo ser excluída. Reativar não recupera
+      os dados antigos.
+    </p>
+
+    <h2>Solicitação assistida</h2>
+    <p>
+      Se você não consegue acessar o aplicativo, escreva para
+      <a href="mailto:contato@agrorumo.com?subject=Exclus%C3%A3o%20de%20dados%20Rumo%20Pragas">contato@agrorumo.com</a>
+      usando o e-mail cadastrado e informe que deseja eliminar os dados do Rumo Pragas. Podemos solicitar
+      dados mínimos para confirmar a identidade e proteger a conta.
+    </p>
+
+    <h2>Dúvidas</h2>
+    <p>
+      Canal de privacidade: <a href="mailto:contato@agrorumo.com">contato@agrorumo.com</a> ·
+      <a href="/privacidade">Política de Privacidade</a>
+    </p>
+
+    <hr />
+    <p><small>MM CAMPO FORTE LTDA. · CNPJ 57.169.838/0001-20 · Brasil · LGPD (Lei nº 13.709/2018)</small></p>
+  </main>
+  <Footer />
+</BaseLayout>
