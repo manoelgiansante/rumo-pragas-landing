@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+---
+
+<BaseLayout
+  title="Página não encontrada — Rumo Pragas"
+  description="A página solicitada não existe. Volte ao site do Rumo Pragas ou acesse o suporte."
+  canonical="https://pragas.agrorumo.com/404"
+  noindex
+>
+  <Header />
+  <main
+    id="main-content"
+    tabindex="-1"
+    class="container-px flex min-h-screen items-center justify-center pb-16 pt-28"
+  >
+    <section class="card w-full max-w-2xl p-8 text-center md:p-12" aria-labelledby="not-found-title">
+      <p class="eyebrow">Erro 404</p>
+      <h1 id="not-found-title" class="h1-display mt-5">Esta página não foi encontrada</h1>
+      <p class="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-[var(--color-slate)]">
+        O endereço pode ter mudado ou sido digitado incorretamente. Você pode voltar ao início ou
+        falar com o suporte do Rumo Pragas.
+      </p>
+      <nav class="mt-8 flex flex-col justify-center gap-3 sm:flex-row" aria-label="Próximos passos">
+        <a class="btn-primary" href="/">Voltar ao início</a>
+        <a class="btn-ghost" href="/suporte">Acessar suporte</a>
+      </nav>
+    </section>
+  </main>
+</BaseLayout>

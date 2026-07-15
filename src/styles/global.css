@@ -1,0 +1,451 @@
+@import 'tailwindcss';
+
+/* ═══════════════════════════════════════════════════════════════
+   Rumo Pragas — Design System v6 "Tech Agro Claro"
+   Fundo claro, tipografia de sistema, verde AgroRumo. Motivo visual: scan de IA.
+   ═══════════════════════════════════════════════════════════════ */
+
+@theme {
+  /* Brand */
+  --color-forest: #0d2b1e; /* verde profundo — headings, footer */
+  --color-forest-soft: #143a29; /* hover/superfícies sobre forest */
+  --color-leaf: #4caf2f; /* acento primário — CTAs (texto branco bold apenas) */
+  --color-leaf-dark: #3d8f24; /* hover do CTA */
+  --color-leaf-ink: #2e7d32; /* verde AA para texto normal sobre branco */
+  --color-lime: #8bd44a; /* detalhe tech em gradientes */
+  --color-amber: #f4b400; /* acento secundário pontual */
+
+  /* Neutros quentes */
+  --color-bg: #ffffff;
+  --color-bg-soft: #f7faf7;
+  --color-ink: #14261c; /* texto forte */
+  --color-slate: #46554b; /* texto corrido */
+  --color-mist: #e3eae3; /* bordas */
+
+  --font-sans: ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --radius-sm: 0.5rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  [hidden] {
+    display: none !important;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-sans);
+    color: var(--color-forest);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  ::selection {
+    background: color-mix(in oklch, var(--color-leaf), white 70%);
+    color: var(--color-forest);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-leaf-ink);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 100;
+    padding: 0.75rem 1.25rem;
+    background: var(--color-forest);
+    color: white;
+    font-weight: 600;
+    border-radius: 0 0 0.5rem 0.5rem;
+  }
+  .skip-link:focus {
+    left: 1rem;
+    top: 0;
+  }
+}
+
+@layer components {
+  .container-px {
+    @apply max-w-7xl mx-auto px-5 md:px-8 lg:px-10;
+  }
+  .section {
+    @apply py-16 md:py-24 lg:py-28;
+  }
+
+  /* Eyebrow — rótulo de seção */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase;
+    color: var(--color-leaf-ink);
+  }
+  .eyebrow::before {
+    content: '';
+    width: 1.5rem;
+    height: 2px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, var(--color-leaf), var(--color-lime));
+  }
+
+  /* Headline scale */
+  .h1-display {
+    font-size: clamp(2.375rem, 5.6vw, 4rem);
+    line-height: 1.06;
+    letter-spacing: -0.03em;
+    font-weight: 700;
+  }
+  .h2-display {
+    font-size: clamp(1.75rem, 3.8vw, 2.75rem);
+    line-height: 1.12;
+    letter-spacing: -0.025em;
+    font-weight: 700;
+  }
+
+  /* Botões */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-6 font-semibold text-base transition-all;
+    min-height: 3rem;
+    background-color: var(--color-leaf-ink);
+    color: #ffffff;
+    box-shadow:
+      0 1px 2px rgba(13, 43, 30, 0.12),
+      0 8px 24px -8px rgba(46, 125, 50, 0.4);
+  }
+  .btn-primary:hover {
+    background-color: var(--color-forest-soft);
+    transform: translateY(-1px) scale(1.02);
+    box-shadow:
+      0 2px 4px rgba(13, 43, 30, 0.14),
+      0 12px 32px -8px rgba(20, 58, 41, 0.45);
+  }
+  .btn-primary:active {
+    transform: translateY(0) scale(0.98);
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 font-semibold text-base transition-all;
+    min-height: 3rem;
+    color: var(--color-forest);
+    border: 1px solid var(--color-mist);
+    background: var(--color-bg);
+  }
+  .btn-ghost:hover {
+    border-color: var(--color-leaf);
+    background: var(--color-bg-soft);
+  }
+
+  /* Card padrão — borda 1px + sombra suave */
+  .card {
+    background: var(--color-bg);
+    border: 1px solid var(--color-mist);
+    border-radius: var(--radius-md);
+    box-shadow: 0 1px 2px rgba(13, 43, 30, 0.04), 0 12px 32px -20px rgba(13, 43, 30, 0.16);
+  }
+  .card-hover {
+    transition:
+      transform 0.35s cubic-bezier(0.2, 0.9, 0.3, 1),
+      box-shadow 0.35s,
+      border-color 0.35s;
+  }
+  .card-hover:hover {
+    transform: translateY(-4px);
+    border-color: color-mix(in oklch, var(--color-leaf), white 55%);
+    box-shadow: 0 2px 4px rgba(13, 43, 30, 0.05), 0 24px 48px -20px rgba(13, 43, 30, 0.22);
+  }
+
+  /* Chip / pill */
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold;
+    background: var(--color-bg-soft);
+    border: 1px solid var(--color-mist);
+    color: var(--color-forest);
+  }
+
+  /* Prose leve pras páginas legais (shell visual apenas) */
+  .prose {
+    color: var(--color-slate);
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+  .prose h1 {
+    font-size: clamp(1.875rem, 4vw, 2.5rem);
+    margin-bottom: 1rem;
+    line-height: 1.15;
+  }
+  .prose h2 {
+    font-size: 1.375rem;
+    margin-top: 2.25rem;
+    margin-bottom: 0.75rem;
+  }
+  .prose h3 {
+    font-size: 1.125rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .prose p,
+  .prose ul,
+  .prose ol {
+    margin-bottom: 1rem;
+  }
+  .prose ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+  }
+  .prose ol {
+    list-style: decimal;
+    padding-left: 1.5rem;
+  }
+  .prose li {
+    margin-bottom: 0.375rem;
+  }
+  .prose a {
+    color: var(--color-leaf-ink);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .prose a:hover {
+    color: var(--color-forest);
+  }
+  .prose strong {
+    color: var(--color-ink);
+  }
+
+  .consent-banner {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+    z-index: 80;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.25rem;
+    max-width: 58rem;
+    margin-inline: auto;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.98);
+    border: 1px solid var(--color-mist);
+    border-radius: var(--radius-md);
+    box-shadow: 0 24px 64px -24px rgba(13, 43, 30, 0.4);
+  }
+  .prose code {
+    background: var(--color-bg-soft);
+    border: 1px solid var(--color-mist);
+    border-radius: 0.375rem;
+    padding: 0.1em 0.4em;
+    font-size: 0.875em;
+  }
+  .prose table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+    font-size: 0.9375rem;
+  }
+  .prose th,
+  .prose td {
+    border: 1px solid var(--color-mist);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+  }
+  .prose th {
+    background: var(--color-bg-soft);
+    color: var(--color-forest);
+  }
+}
+
+/* ═══════════════ Texturas & motivos tech ═══════════════ */
+
+:root {
+  color-scheme: light only;
+}
+
+@layer utilities {
+  /* Dot-grid sutil */
+  .dot-grid {
+    background-image: radial-gradient(
+      circle at 1px 1px,
+      color-mix(in oklch, var(--color-forest), transparent 88%) 1px,
+      transparent 0
+    );
+    background-size: 24px 24px;
+  }
+
+  /* Blobs de gradiente desfocado (verde→lima, baixa opacidade) */
+  .blob-leaf {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(80px);
+    background: linear-gradient(135deg, rgba(76, 175, 47, 0.18), rgba(139, 212, 74, 0.14));
+    pointer-events: none;
+  }
+  .blob-amber {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(90px);
+    background: rgba(244, 180, 0, 0.1);
+    pointer-events: none;
+  }
+
+  /* Gradiente de texto em verdes escuros com contraste */
+  .gradient-text-leaf {
+    background: linear-gradient(92deg, var(--color-forest) 0%, var(--color-leaf-ink) 60%, var(--color-leaf-dark) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Números técnicos */
+  .tnum {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Mantém conteúdo visível sem depender de suporte a scroll timelines. */
+  .reveal-on-scroll {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Entrada do hero (uma vez, on load) */
+  @keyframes hero-rise {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .hero-rise {
+    animation: hero-rise 0.8s cubic-bezier(0.2, 0.9, 0.3, 1) both;
+  }
+  .hero-rise-1 {
+    animation-delay: 0.08s;
+  }
+  .hero-rise-2 {
+    animation-delay: 0.18s;
+  }
+  .hero-rise-3 {
+    animation-delay: 0.3s;
+  }
+  .hero-rise-4 {
+    animation-delay: 0.42s;
+  }
+
+  /* Float suave pra chips flutuantes do mockup */
+  @keyframes float-soft {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+  .float-soft {
+    animation: float-soft 5s ease-in-out infinite;
+  }
+  .float-soft-delay {
+    animation: float-soft 6s ease-in-out infinite;
+    animation-delay: 1.2s;
+  }
+
+  /* Linha de scan do viewfinder ilustrativo */
+  @keyframes scan-sweep {
+    0%,
+    100% {
+      top: 8%;
+    }
+    50% {
+      top: 88%;
+    }
+  }
+  .scan-line {
+    animation: scan-sweep 3.6s ease-in-out infinite;
+  }
+
+  /* Pulso do badge de confiança */
+  @keyframes pulse-soft {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.75;
+    }
+  }
+  .pulse-soft {
+    animation: pulse-soft 2.4s ease-in-out infinite;
+  }
+
+  /* Scroll-snap da galeria de pragas */
+  .snap-row {
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .snap-row::-webkit-scrollbar {
+    display: none;
+  }
+  .snap-item {
+    scroll-snap-align: start;
+  }
+
+  .faq-item[open] .faq-chevron {
+    transform: rotate(180deg);
+  }
+
+  .faq-chevron {
+    transition: transform 0.2s ease;
+  }
+}
+
+@media (max-width: 40rem) {
+  .consent-banner {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .hero-rise,
+  .reveal-on-scroll,
+  .float-soft,
+  .float-soft-delay,
+  .scan-line,
+  .pulse-soft {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

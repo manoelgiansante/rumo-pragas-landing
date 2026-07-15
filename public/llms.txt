@@ -1,0 +1,34 @@
+# Rumo Pragas
+
+Site oficial: https://pragas.agrorumo.com
+
+Rumo Pragas é um aplicativo gratuito para iPhone e Android que apoia a identificação visual de sinais em plantas. A pessoa envia uma foto e recebe uma hipótese probabilística, nível de confiança e possíveis alternativas.
+
+## Recursos publicados
+
+- Análise de foto com conexão à internet
+- Fila local para tentar novamente após falha de conexão; não há inferência offline
+- Histórico de resultados estruturados
+- Biblioteca educativa
+- Assistente de IA educativo
+- Exclusão dos dados específicos do aplicativo em Ajustes
+
+## Limites importantes
+
+- A resposta não é diagnóstico definitivo, laudo ou receituário agronômico
+- O aplicativo não prescreve produto, dose ou aplicação
+- Decisões relevantes exigem validação por profissional habilitado
+- Produtos registrados e condições de uso devem ser conferidos no AGROFIT
+
+## Modelo comercial
+
+- Gratuito
+- Sem assinatura, compra interna ou período de teste
+
+## Responsável
+
+MM CAMPO FORTE LTDA. — CNPJ 57.169.838/0001-20 — marca AgroRumo
+
+Privacidade: https://pragas.agrorumo.com/privacidade
+Termos: https://pragas.agrorumo.com/termos
+Suporte: https://pragas.agrorumo.com/suporte

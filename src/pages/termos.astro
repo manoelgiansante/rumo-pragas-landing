@@ -1,0 +1,127 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Termos de Uso — Rumo Pragas"
+  description="Termos do Rumo Pragas, aplicativo gratuito de apoio à identificação visual por inteligência artificial."
+  canonical="https://pragas.agrorumo.com/termos"
+>
+  <Header />
+  <main id="main-content" tabindex="-1" class="mx-auto max-w-3xl px-6 pb-16 pt-28 prose md:pt-32">
+    <h1>Termos de Uso</h1>
+    <p><strong>Última atualização:</strong> 14 de julho de 2026</p>
+
+    <h2>1. Responsável e aceitação</h2>
+    <p>
+      O Rumo Pragas é oferecido pela <strong>MM CAMPO FORTE LTDA.</strong>, CNPJ
+      <strong>57.169.838/0001-20</strong>, sob a marca AgroRumo. Ao usar o aplicativo, você concorda
+      com estes Termos e com a <a href="/privacidade">Política de Privacidade</a>.
+    </p>
+
+    <h2>2. O que o serviço oferece</h2>
+    <p>
+      O aplicativo recebe uma foto e apresenta uma hipótese probabilística de identificação, nível de
+      confiança e possíveis alternativas. Também oferece histórico estruturado, biblioteca educativa e
+      assistente de IA para organizar informações gerais. A análise por foto e o assistente exigem internet;
+      uma solicitação interrompida pode ficar em fila local para nova tentativa quando a conexão retornar.
+      Não há inferência offline.
+    </p>
+
+    <h2>3. Serviço gratuito</h2>
+    <p>
+      O Rumo Pragas é gratuito e não oferece plano pago, assinatura, compra interna ou período de teste.
+      Podem existir limites técnicos e de uso justo para proteger a disponibilidade do serviço.
+    </p>
+
+    <h2>4. Conta e segurança</h2>
+    <ul>
+      <li>Forneça dados corretos e mantenha seu acesso protegido.</li>
+      <li>Não compartilhe credenciais nem tente acessar a conta de outra pessoa.</li>
+      <li>Avise <a href="mailto:contato@agrorumo.com">contato@agrorumo.com</a> se suspeitar de uso indevido.</li>
+      <li>A identidade de acesso AgroRumo pode ser compartilhada entre produtos, enquanto os dados de uso do Rumo Pragas permanecem separados conforme as permissões aplicáveis.</li>
+    </ul>
+
+    <h2>5. Uso aceitável</h2>
+    <p>Você não pode:</p>
+    <ul>
+      <li>usar o serviço para atividade ilegal, fraude ou violação de direitos;</li>
+      <li>tentar contornar autenticação, autorização, limites técnicos ou controles de segurança;</li>
+      <li>introduzir código malicioso, automatizar abuso ou sobrecarregar a infraestrutura;</li>
+      <li>copiar, sublicenciar ou explorar componentes protegidos sem autorização, ressalvadas as permissões legais;</li>
+      <li>usar a saída da IA como se fosse laudo, receita ou decisão profissional definitiva.</li>
+    </ul>
+
+    <h2>6. Limites agronômicos e uso responsável</h2>
+    <p>
+      A análise depende da imagem, iluminação, estágio da planta, sintomas semelhantes e outros fatores.
+      Resultados podem estar incorretos ou incompletos. Confirme situações relevantes com um profissional
+      habilitado e considere inspeção de campo, histórico da área e condições locais.
+    </p>
+    <p>
+      O Rumo Pragas <strong>não emite receituário agronômico</strong> e não prescreve produto, dose,
+      mistura, intervalo ou forma de aplicação. A Lei nº 14.785/2023 disciplina o uso e a comercialização
+      de agrotóxicos, e a Resolução Confea nº 1.149/2025 estabelece que o receituário agronômico seja
+      prescrito por engenheiro agrônomo ou engenheiro florestal legalmente habilitado e registrado no
+      CREA, vinculado a diagnóstico técnico. Consulte sempre o registro e as condições de uso oficiais no
+      <a href="https://agrofit.agricultura.gov.br/agrofit_cons/principal_agrofit_cons" target="_blank" rel="noopener noreferrer">AGROFIT</a>
+      e siga a orientação do profissional responsável.
+    </p>
+
+    <h2>7. Inteligência artificial</h2>
+    <p>
+      A IA pode gerar conteúdo impreciso, desatualizado ou inadequado ao caso concreto. O nível de
+      confiança é um apoio à leitura do resultado, não uma garantia. Não envie informações pessoais
+      desnecessárias e não tome decisão de alto impacto exclusivamente com base na resposta.
+    </p>
+
+    <h2>8. Propriedade intelectual e conteúdo</h2>
+    <p>
+      Marca, interface, código e conteúdo próprio pertencem à MM CAMPO FORTE LTDA. ou a seus
+      licenciadores. Você mantém os direitos sobre o conteúdo que envia e nos concede apenas a
+      autorização necessária para processá-lo e prestar a funcionalidade solicitada.
+    </p>
+
+    <h2>9. Disponibilidade e responsabilidade</h2>
+    <p>
+      Trabalhamos para manter o serviço seguro e disponível, mas podem ocorrer manutenção, falhas de
+      conexão ou indisponibilidade de terceiros. Nada nestes Termos exclui direitos ou responsabilidades
+      que não possam ser afastados pela legislação brasileira. Dentro dos limites legais, o usuário é
+      responsável por validar as informações antes de agir.
+    </p>
+
+    <h2>10. Exclusão de dados e encerramento do uso</h2>
+    <p>
+      Em <strong>Ajustes → Excluir Conta</strong>, você solicita a eliminação dos dados específicos do
+      Rumo Pragas. Quando o aplicativo confirma a conclusão, esses dados foram eliminados e os tokens
+      push foram revogados. A identidade global AgroRumo, usada por outros produtos, não é apagada por
+      essa operação específica e pode ser mantida conforme a base legal aplicável. Registros históricos
+      compartilhados sem identificação segura do aplicativo também são retidos para não excluir dados de
+      outros produtos. Um marcador técnico mínimo de desvinculação é mantido para executar novas
+      tentativas, comprovar a limpeza e impedir recriação silenciosa dos dados; ele permanece até
+      reativação explícita do Rumo Pragas ou exclusão da identidade global. Se o processamento
+      continuar ou falhar, o aplicativo informa o estado para nova tentativa ou suporte. Veja
+      <a href="/excluir-conta">Excluir dados do Rumo Pragas</a>.
+    </p>
+    <p>Podemos restringir uso abusivo, ilegal ou que comprometa a segurança, respeitada a legislação.</p>
+
+    <h2>11. Alterações</h2>
+    <p>
+      Estes Termos podem ser atualizados para refletir mudanças legais, técnicas ou operacionais. A data
+      acima indica a versão vigente; mudanças materiais serão comunicadas por meio adequado.
+    </p>
+
+    <h2>12. Lei aplicável e contato</h2>
+    <p>
+      Aplica-se a legislação brasileira, inclusive o Código de Defesa do Consumidor e a LGPD. Direitos
+      de foro previstos em lei permanecem preservados. Contato:
+      <a href="mailto:contato@agrorumo.com">contato@agrorumo.com</a>.
+    </p>
+
+    <hr />
+    <p><a href="/">← Voltar para o site</a> · <a href="/privacidade">Política de Privacidade</a></p>
+  </main>
+  <Footer />
+</BaseLayout>

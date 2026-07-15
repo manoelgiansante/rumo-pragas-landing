@@ -1,0 +1,98 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Delete Rumo Pragas data — Privacy"
+  description="How to request deletion of Rumo Pragas app data and understand the processing result."
+  canonical="https://pragas.agrorumo.com/delete-account"
+  lang="en"
+  uiLang="pt-BR"
+  ogLocale="en_US"
+  ogImageAlt="Rumo Pragas: photo-based hypotheses, confidence, alternatives, and integrated pest management content"
+>
+  <Header lang="pt-BR" />
+  <main id="main-content" tabindex="-1" class="mx-auto max-w-3xl px-6 pb-16 pt-28 prose md:pt-32">
+    <h1>Delete your Rumo Pragas data</h1>
+    <p><strong>Last updated:</strong> July 14, 2026</p>
+    <p>This page is also available in Portuguese: <a href="/excluir-conta" lang="pt-BR">Excluir dados do Rumo Pragas</a>.</p>
+    <p>
+      This action deletes data specific to the Rumo Pragas app. Your AgroRumo sign-in identity is shared
+      with other products and is not deleted by this app-specific operation.
+    </p>
+
+    <h2>Delete through the app</h2>
+    <ol>
+      <li>Open Rumo Pragas on iPhone or Android.</li>
+      <li>Open the <strong>Settings</strong> tab.</li>
+      <li>Tap <strong>Delete Account</strong>.</li>
+      <li>Read the notice and confirm.</li>
+    </ol>
+
+    <h2>Understand the result</h2>
+    <ul>
+      <li><strong>Completed:</strong> Rumo Pragas app data was deleted and push tokens were revoked. The global AgroRumo identity, shared historical records without a safe app discriminator, and the minimum unlink marker were retained.</li>
+      <li><strong>Processing:</strong> the request was accepted but has not finished. Wait and check again.</li>
+      <li><strong>Not completed:</strong> the operation failed or is incomplete. Retry it and contact support if the issue persists.</li>
+    </ul>
+    <p>
+      Completed deletion is irreversible for Rumo Pragas data. Records may be retained where required by
+      law, for the exercise of legal rights, or under another lawful retention basis.
+    </p>
+
+    <h2>Data covered</h2>
+    <ul>
+      <li>saved Rumo Pragas identification history and results;</li>
+      <li>app-specific interactions and preferences;</li>
+      <li>auxiliary records linked to Rumo Pragas usage;</li>
+      <li>push-notification tokens associated with the app.</li>
+    </ul>
+    <p>
+      The current history record stores the structured result without writing an image URL. Images kept
+      in your device gallery must be deleted through your device.
+    </p>
+
+    <h2>Global AgroRumo identity</h2>
+    <p>
+      Your name, email and authentication identity may support other AgroRumo products and therefore may
+      be retained under the applicable lawful basis. To exercise rights over the global identity, contact
+      our privacy channel; the request will be assessed across the relevant products and legal retention
+      requirements.
+    </p>
+    <p>
+      Historical analytics and audit events that cannot be safely attributed to one app are also retained,
+      because deleting them could alter records belonging to other AgroRumo products.
+    </p>
+
+    <h2>Minimum unlink marker</h2>
+    <p>
+      To finish retries and prevent Rumo Pragas data from being silently recreated, we retain only the
+      global identity UUID, operational status, attempt count, limited technical error codes and processing
+      timestamps. It contains no name, email, photo, message, content or token and is not used for
+      advertising or profiling.
+    </p>
+    <p>
+      Its purposes are to perform the request, prove app-specific cleanup and honor the unlink state. As
+      applicable, processing is based on fulfilling the data-subject request, data-protection obligations
+      and the establishment or exercise of legal rights. It remains until you explicitly reactivate Rumo
+      Pragas or the global AgroRumo identity is deleted. Reactivation does not restore old data.
+    </p>
+
+    <h2>Assisted request</h2>
+    <p>
+      If you cannot access the app, email
+      <a href="mailto:contato@agrorumo.com?subject=Delete%20Rumo%20Pragas%20Data">contato@agrorumo.com</a>
+      from your registered address and request deletion of your Rumo Pragas data. We may request the
+      minimum information necessary to verify your identity and protect the account.
+    </p>
+
+    <h2>Questions</h2>
+    <p>Privacy contact: <a href="mailto:contato@agrorumo.com">contato@agrorumo.com</a> · <a href="/privacidade">Privacy Policy</a></p>
+
+    <hr />
+    <p><small>MM CAMPO FORTE LTDA. · CNPJ 57.169.838/0001-20 · Brazil · LGPD (Law 13.709/2018)</small></p>
+  </main>
+  <Footer lang="pt-BR" />
+</BaseLayout>

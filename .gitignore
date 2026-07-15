@@ -1,7 +1,42 @@
-node_modules
-dist
-.env
-.env.local
-*.local
+# build output
+dist/
+.output/
+
+# generated types
+.astro/
+
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# browser test artifacts
+playwright-report/
+test-results/
+blob-report/
+.lighthouseci/
+lighthouse-reports/
+
+# environment variables
+.env*
+!.env.example
+
+# macOS
 .DS_Store
+
+# editor
+.vscode/
+.idea/
+
+# vercel
 .vercel
+
+# local authorization flags (ZERO-N hook tokens — session-local, never tracked)
+.code-edit-authorized.flag
+.deploy-authorized.flag
+.pixel-diff-validated-*.flag
+.gstack/

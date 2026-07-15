@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Suporte — Rumo Pragas"
+  description="Canais de suporte, dúvidas frequentes e orientação para relatar problemas no Rumo Pragas."
+  canonical="https://pragas.agrorumo.com/suporte"
+>
+  <Header />
+  <main id="main-content" tabindex="-1" class="mx-auto max-w-3xl px-6 pb-16 pt-28 prose md:pt-32">
+    <h1>Suporte do Rumo Pragas</h1>
+    <p>Envie sua dúvida ou relato por um dos canais abaixo. Não publicamos prazo fixo de resposta.</p>
+
+    <h2>Canais</h2>
+    <ul>
+      <li><strong>E-mail:</strong> <a href="mailto:contato@agrorumo.com?subject=Suporte%20Rumo%20Pragas">contato@agrorumo.com</a></li>
+      <li><strong>WhatsApp:</strong> <a href="https://wa.me/5517996581120?text=Ol%C3%A1%2C%20preciso%20de%20suporte%20com%20o%20Rumo%20Pragas">+55 17 99658-1120</a></li>
+    </ul>
+
+    <h2>Dúvidas frequentes</h2>
+
+    <h3>A identificação é definitiva?</h3>
+    <p>
+      Não. A IA apresenta uma hipótese, confiança e alternativas. Qualidade da foto e sintomas parecidos
+      podem mudar o resultado. Confirme decisões relevantes com profissional habilitado.
+    </p>
+
+    <h3>Preciso de internet?</h3>
+    <p>
+      Sim, para analisar uma foto e conversar com o assistente. Se o envio for interrompido, a solicitação
+      pode ficar em uma fila local para nova tentativa quando a rede retornar. Isso não significa que a IA
+      faça a análise offline.
+    </p>
+
+    <h3>Existe assinatura ou compra interna?</h3>
+    <p>Não. O Rumo Pragas é gratuito, sem assinatura, compra interna ou período de teste.</p>
+
+    <h3>Como excluir meus dados?</h3>
+    <p>
+      No aplicativo, acesse <strong>Ajustes → Excluir Conta</strong>. A conclusão elimina os dados
+      específicos do Rumo Pragas e revoga tokens push; a identidade global AgroRumo pode ser mantida para
+      outros produtos e bases legais. O passo a passo e os estados possíveis estão em
+      <a href="/excluir-conta">Excluir dados do Rumo Pragas</a>.
+    </p>
+
+    <h3>Esqueci minha senha</h3>
+    <p>
+      Use <strong>Esqueci minha senha</strong> na tela de acesso, informe o e-mail cadastrado e verifique
+      também a caixa de spam. Se não receber a mensagem, fale com o suporte.
+    </p>
+
+    <h3>Posso decidir uma aplicação a partir da resposta?</h3>
+    <p>
+      Não use o aplicativo como receituário. Ele não prescreve produto, dose ou aplicação. Procure um
+      profissional legalmente habilitado e confira produtos registrados no AGROFIT.
+    </p>
+
+    <h2>Relatar um problema técnico</h2>
+    <p>Para nos ajudar a reproduzir a falha, envie:</p>
+    <ul>
+      <li>modelo do aparelho e versão do iOS ou Android;</li>
+      <li>versão do Rumo Pragas, disponível em Ajustes;</li>
+      <li>passos executados e mensagem exibida;</li>
+      <li>captura de tela sem informações pessoais desnecessárias, se possível.</li>
+    </ul>
+    <p>Nunca envie senha, token, documento ou outro segredo por e-mail ou WhatsApp.</p>
+
+    <h2>Privacidade e LGPD</h2>
+    <p>
+      Para acesso, correção, oposição, portabilidade ou eliminação quando cabível, escreva para
+      <a href="mailto:contato@agrorumo.com">contato@agrorumo.com</a>. Consulte a
+      <a href="/privacidade">Política de Privacidade</a> e os <a href="/termos">Termos de Uso</a>.
+    </p>
+
+    <hr />
+    <p><small>MM CAMPO FORTE LTDA. · CNPJ 57.169.838/0001-20 · Brasil</small></p>
+  </main>
+  <Footer />
+</BaseLayout>

@@ -1,0 +1,70 @@
+---
+interface Props {
+  lang?: string;
+}
+
+const { lang } = Astro.props;
+
+const LINKS = [
+  { href: '/#como-funciona', label: 'Como funciona' },
+  { href: '/#biblioteca', label: 'Biblioteca' },
+  { href: '/#assistente-ia', label: 'Assistente de IA' },
+  { href: '/#faq', label: 'Dúvidas' },
+];
+---
+
+<header lang={lang} class="fixed inset-x-0 top-0 z-50 border-b border-[var(--color-mist)] bg-white/95 shadow-[0_2px_16px_-10px_rgba(13,43,30,0.2)] backdrop-blur-xl">
+  <nav class="container-px flex h-16 items-center justify-between md:h-[72px]" aria-label="Navegação principal">
+    <a href="/#hero" class="flex items-center gap-2.5">
+      <img
+        src="/app-icon-64.webp"
+        width="36"
+        height="36"
+        alt=""
+        class="h-9 w-9 rounded-[10px]"
+        decoding="async"
+      />
+      <span class="text-lg font-bold tracking-tight text-[var(--color-forest)] md:text-xl">
+        Rumo <span class="text-[var(--color-leaf-ink)]">Pragas</span>
+      </span>
+    </a>
+
+    <div class="hidden items-center gap-7 md:flex">
+      {LINKS.map((link) => (
+        <a href={link.href} class="py-2 text-sm font-medium text-[var(--color-slate)] transition-colors hover:text-[var(--color-forest)]">
+          {link.label}
+        </a>
+      ))}
+    </div>
+
+    <div class="flex items-center gap-3">
+      <span class="chip hidden lg:inline-flex">
+        <span class="h-1.5 w-1.5 rounded-full bg-[var(--color-leaf)]" aria-hidden="true"></span>
+        Grátis, sem compras
+      </span>
+      <a href="/#downloads" class="btn-primary hidden !min-h-11 !px-5 text-sm sm:inline-flex">Baixar</a>
+
+      <details class="mobile-menu group relative md:hidden">
+        <summary class="flex min-h-11 min-w-11 cursor-pointer list-none items-center justify-center text-[var(--color-forest)]">
+          <span class="sr-only">Abrir ou fechar menu</span>
+          <svg class="group-open:hidden" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+          <svg class="hidden group-open:block" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <path d="m6 6 12 12M18 6 6 18"></path>
+          </svg>
+        </summary>
+        <div class="absolute right-0 top-12 w-[min(20rem,calc(100vw-2.5rem))] rounded-2xl border border-[var(--color-mist)] bg-white p-3 shadow-xl">
+          {LINKS.map((link) => (
+            <a href={link.href} class="flex min-h-12 items-center rounded-xl px-4 font-medium text-[var(--color-ink)] hover:bg-[var(--color-bg-soft)]">
+              {link.label}
+            </a>
+          ))}
+          <a href="/#downloads" class="btn-primary mt-2 w-full">Baixar o app</a>
+        </div>
+      </details>
+    </div>
+  </nav>
+</header>
+
+<script is:inline src="/js/mobile-menu.js" defer></script>
